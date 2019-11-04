@@ -1,0 +1,242 @@
+
+addOption = Add
+
+addTo = Add to
+
+atr.address_id                          = Address ID
+atr.administrative_headquarters         = Administrative headquarters
+atr.administrative_headquarters_country = State administrative headquarters
+atr.anthem                              = Anthem
+atr.arrival_date                        = Arrival date
+atr.capital                             = Capital
+atr.carrier_id                          = Carrier ID
+atr.city                                = City?
+atr.composite_region_id                 = Composite region ID
+atr.composite_region_type               = Composite region type
+atr.composite_state                     = Composite state
+atr.contract_num                        = Contract number
+atr.crest                               = Crest
+atr.departure_date                      = Departure Date
+atr.distance                            = Distance
+atr.email                               = E-mail
+atr.exists                              = Exists?
+atr.firstname                           = Firstname
+atr.flag                                = Flag
+atr.from                                = From
+atr.id                                  = ID
+atr.id2                                 = ID2
+atr.id_local_government                 = Local government ID
+atr.identifier                          = Identifier
+atr.interline                           = Interline
+atr.lastname                            = Lastname
+atr.legal_successor                     = Legal successor
+atr.licence_num                         = Licence number
+atr.line_id                             = Line ID
+atr.line_transport                      = Line transport
+atr.line_transport_in_real_time_id      = Line transport ID
+atr.local_government_name               = Local government name
+atr.name                                = Name
+atr.num                                 = Number
+atr.parent_country                      = Parent country
+atr.phone_num                           = Phone number
+atr.pop_id2                             = Pop_ID2
+atr.price                               = Price
+atr.prod_year                           = Production year
+atr.ptt                                 = PTT
+atr.reg_plate                           = Registration plate
+atr.region_in_composition_id            = Region in composition ID
+atr.region_in_composition_region_type   = Region in composition region type
+atr.region_name                         = Region name
+atr.region_type                         = Region type
+atr.role                                = Role
+atr.serial_num                          = Serial number
+atr.service_id                          = Service ID
+atr.staff_type                          = Staff type
+atr.state_in_composition                = State in composition
+atr.statehood_date                      = Statehood date
+atr.station_from                        = Starting station
+atr.station_id                          = Station ID
+atr.station_to                          = Arrival station
+atr.street                              = Street
+atr.to                                  = To
+atr.transport_id                        = Transport ID
+atr.trip_duration                       = Trip duration
+atr.umcn                                = UMCN
+atr.vehicle_id                          = Vehicle ID
+
+browseLabel = Browse...
+
+cancelOption = Cancel
+
+changeMetaSchema = Change meta-schema
+
+checkDataError = Check your entered data please.
+
+chooseLanguageLabel = Choose application language:
+
+chooseParent = Choose parent
+
+chooseSchemaLabel = Choose schema source:
+
+confirmOption = Confirm
+
+createJsonError = Couldn't create JSON file from current text!
+
+databaseError = Couldn't connect to database. Please check data you've entered and try again.
+
+databaseLabel = Database
+
+databaseNameLabel = Database name:
+
+databaseParametersLabel = Enter database connection parameters:
+
+deleteError = Row cannot be deleted!
+
+deleteOption = Delete
+
+demote = Demote
+
+demoteErrorPart1 = Can't demote table '
+
+demoteErrorPart2 = ' because there are no any parent table.
+
+editorJsonOpen = Click to open JSON schema editor
+
+editorSaveQuestion = Do you want to save current file?
+
+empty = Empty
+
+errorHeader = Error!
+
+exitOption = Exit
+
+file = File
+
+fileOpenError = Couldn't open file!
+
+fileSaveError = Couldn't save file!
+
+fk.belongs_to_carrier               = Belongs to carrier
+fk.belongs_to_populated_place       = Belongs to populated place
+fk.composite_region                 = Composite region
+fk.contains_vehicles                = Contains vehicles
+fk.country_places                   = Country places
+fk.destination                      = Destination
+fk.employing                        = Employing
+fk.has_service                      = Owns service
+fk.id_local_government_participates = Local government participates
+fk.located_in                       = Located in
+fk.municipality_headquarters        = Municipality headquarters
+fk.part_of                          = Part of
+fk.performs                         = Performs
+fk.performs\ service                 = Performs service
+fk.populated_place_participates     = Populated place participates
+fk.region_part_of                   = Region part of
+fk.rel1                             = Relationship_1
+fk.rel2                             = Relationship_2
+fk.specifies                        = Specifies
+fk.starting_point                   = Starting point
+fk.works_in_service                 = Works in service
+
+format = Format
+
+formatValidationError = ' format is not valid!
+
+ipLabel = IP address:
+
+jsonError = Invalid path or JSON file.
+
+jsonLocationLabel = JSON file location:
+
+length = Length
+
+lengthValidationError = ' length is not valid!
+
+loadMetaSchema = Load meta-schema
+
+location = Location
+
+mustBeFilled = ' must be filled!
+
+newSchema = New schema
+
+nullValidationError = ' can't be null!
+
+openEditor = Open editor
+
+openSchema = Open schema
+
+package.activity_of_the_business_system  = 03_Activity of the Business system
+package.control_support                  = 05_Control support
+package.cooperation_with_the_environment = 06_Cooperation with the environment
+package.documents                        = 04_Documents
+package.mission_and_environment          = 01_Mission and environment
+package.org_struct                       = 02_Organization structure
+package.psw2018                          = PSW2018
+package.transport                        = 07_Transport
+
+passwordLabel = Password:
+
+promote = Promote
+
+remember = Remember
+
+requiredFields = * indicates required fields
+
+rowAdded = Row is added successfully.
+
+rowDeleted = Row deleted successfully.
+
+rowWarning = There is no row selected!
+
+saveSchema = Save schema
+
+schemaEditor = Schema editor
+
+schemaError = Meta schema could not be loaded properly.
+
+searchIn = Search in
+
+searchOption = Search
+
+successHeader = Success!
+
+table.address                     = Address
+table.business_system             = Business system
+table.carrier                     = Carrier
+table.carrier_on_address          = Carrier's address
+table.consists_of                 = Consists of
+table.country                     = Country
+table.country_composition         = Country composition
+table.driver                      = Driver
+table.drives                      = Drives
+table.has_contract                = Has contract
+table.line                        = Line
+table.line_transport_in_real_time = Line transport in real time
+table.local_government            = Local government
+table.occasional_transport        = Occasional transport
+table.participates                = Participates
+table.populated_place             = Populated place
+table.region                      = Region
+table.region_composition          = Region composition
+table.region_places               = Region places
+table.repairer                    = Repairer
+table.service                     = Service
+table.service_on_address          = Service's address
+table.servises                    = Servises
+table.staff                       = Staff
+table.station                     = Station
+table.station_on_address          = Station's address
+table.structure                   = Structure
+table.support_staff               = Support staff
+table.vehicle                     = Vehicle
+
+updateIn = Update in
+
+updateOption = Update
+
+usernameLabel = Username:
+
+validateSchema = Validate schema
+
+warningHeader = Warning!

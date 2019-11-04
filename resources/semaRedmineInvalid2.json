@@ -1,0 +1,129 @@
+{
+	"package" : 
+	{
+        "packageName" : "PRIMER_VEZBE",
+        "label" : "Primer sa vezbi",
+        "packageType" : "package",
+        "packages" : [
+		{                
+	         "packageName" : "PODSISTEM",
+			 "label" : "Podsistem",
+	         "packageType" : "subpackage",
+             "tables" : [
+             {
+                 "tableName" : "DRZAVA",
+                 "label" : "Drzava",
+                 "columns" : [
+                 {
+	             	 "columnName" : "DRZ_ID",
+	             	 "label" : "Oznaka",
+	            	 "dataType" : "varchar",
+	            	 "length" : 3,
+	            	 "PK" : true,
+	            	 "mandatory" : true
+              	 },
+                 {
+                	 "columnName" : "DRZ_NAZIV",
+                	 "label" : "Naziv",
+                 	 "dataType" : "varchar",
+                 	 "length" : 128,
+                 	 "PK" : false,
+                 	 "mandatory" : true
+              	 },
+              	 {
+                  	 "columnName" : "NM_PB",
+                  	 "label" : "Glavni grad",
+                  	 "dataType" : "varchar",
+                  	 "length" : 5,
+	                 "PK" : false,
+	                 "mandatory" : false
+              	 }  
+                ],
+                "foreignKeys" : [
+                   {
+                     "referencedTable": "NASELJENO_MESTO",
+                     "relationName" : "GLAVNI_GRAD",
+                     "label" : "Glavni grad",
+                     "pairs": [
+                       {
+                           "referenced" : "NM_PB",
+                           "referencing" : "NM_PB"
+                       }
+                    ]  
+                   }
+                ]
+      	     },
+	      	 {
+		         "tableName" : "NASELJENO_MESTO",
+		         "label" : "Naseljeno mesto",
+		         "columns" : [
+		         {
+		        	 "columnName" : "DRZ_ID",
+		        	 "label" : "Drzava",
+	                 "dataType" : "varchar",
+	                 "length" : 3,
+	                 "PK" : true,
+	                 "mandatory" : true
+	             },
+                 {
+                     "columnName" : "NM_PB",
+                     "label" : "Post. broj",
+                  	 "dataType" : "varchar",
+                  	 "length" : 5,
+                  	 "PK" : true,
+                  	 "mandatory" : true
+              	 },
+	             {
+	                 "columnName" : "NM_NAZIV",
+	                 "label" : "Naziv",
+	                 "dataType" : "varchar",
+	                 "length" : 128,
+	                 "PK" : false,
+                 	 "mandatory" : true
+                 },
+                 {
+                     "columnName" : "NM_STAN",
+                     "label" : "Broj stanovnika",
+                     "dataType" : "int",
+                     "length" : 10,
+                     "PK" : false,
+                     "mandatory" : false
+                },
+                {
+                     "columnName" : "NM_GRAD",
+                     "label" : "Grad",
+                     "dataType" : "boolean",
+                     "PK" : false,
+                     "mandatory" : true
+                },
+                {
+                     "columnName" : "NM_DAT_OSNIV",
+                     "label" : "Datum osnivanja",
+                     "dataType" : "date",
+                     "PK" : false,
+                     "mandatory" : false
+                }      
+	            ],
+                "foreignKeys" : [
+                   {
+                     "referencedTable": "DRZAVA",
+                     "relationName" : "PRIPADA_DRZAVI",
+                     "label" : "Pripada drzavi",
+                     "pairs": [
+                       {
+                           "referenced" : "DRZ_ID",
+                           "referencing" : "DRZ_ID"
+                       }
+                    ]  
+                   }
+                ]
+             },
+	         {
+	        	 "tableName" : "STUDENT",
+	        	 "label" : "Student"
+  	         }
+             ]   
+		}
+		] 
+	}
+}

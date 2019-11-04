@@ -1,0 +1,142 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Meta-sema",
+    "type": "object",
+    "properties": 
+    {
+        "package" : { "$ref": "#/definitions/package" }
+    },
+    "definitions": {
+        "package" : {
+            "type" : "object",
+            "properties" : {
+            	"packageName" : {
+                    "$ref": "#/definitions/stringType",
+                    "description": "Ime paketa u kojoj se nalazi opis informacionog resursa"
+                },
+                "label" : {
+                    "$ref": "#/definitions/stringType",
+                    "description": "Labela za vizuelni prikaz"
+                },
+                "packageType" : {
+                    "type" : "string",
+                    "description": "Tip paketa",
+                    "enum": [ "package" , "subpackage" ]
+                },
+                "tables" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "object",
+                        "properties": {
+                            "tableName" : {
+								"$ref": "#/definitions/stringType",
+								"description": "Naziv jednog entiteta"
+                            },
+                            "label" : {
+			                    "$ref": "#/definitions/stringType",
+			                    "description": "Labela za vizuelni prikaz"
+			                },
+                            "columns" : {
+                                "type" :"array",
+                                "items": {
+                                    "type" : "object",
+                                    "properties": {
+                                        "columnName" : {
+                                            "$ref": "#/definitions/stringType",
+                                            "description": "Naziv kolone"
+                                        },
+                                        "label" : {
+						                    "$ref": "#/definitions/stringType",
+						                    "description": "Labela za vizuelni prikaz"
+						                },
+                                        "dataType" : {
+                                            "type" : "string",
+                                            "enum": [ "boolean" , "int" , "float", "varchar", "date", "char"],
+                                            "description": "Tip podataka za vrednost u koloni"
+                                        },
+                                        "precision" : {
+						                    "type" : "integer",
+						                    "description": "Broj cifara vrednosti u koloni",
+						                    "minimum" : 1
+						                },
+						                "length" : {
+						                    "type" : "integer",
+						                    "description": "Duzina vrednosti u koloni",
+						                    "minimum" : 1
+						                },
+                                        "PK" : {
+                                            "type" : "boolean",
+                                            "description": "True vrednost ako je kolona primarni kljuc, false u suprotnom"
+                                        },
+                                        "mandatory" : {
+                                            "type" : "boolean",
+                                            "description": "Da li je kolona obavezna za popunjavanje"
+                                        }
+                                    },
+                                    "required":["columnName", "label", "dataType", "PK", "mandatory"],
+									"additionalProperties":false
+                                }
+                            },
+                            "foreignKeys" : {
+                            	"type" : "array",
+                            	"description" : "Niz stranih kljuceva tabele",
+                            	"items" : {
+                            		"type" : "object",
+                            		"properties" : {
+                            			"referencedTable" : {
+                            				"$ref": "#/definitions/stringType",
+                            				"description" : "Naziv tabele koja je referencirana"
+                            			},
+                            			"relationName" : {
+                            				"$ref": "#/definitions/stringType",
+                            				"description" : "Opis relacije izmedju referencirane i referencirajuce tabele"
+                            			},
+                            			"label" : {
+						                    "$ref": "#/definitions/stringType",
+						                    "description": "Labela za vizuelni prikaz"
+						                },
+                            			"pairs" : {
+                            				"type" : "array",
+                            				"description" : "Par koji predstavlja kolonu iz referencirane i kolonu iz referencirajuce tabele",
+                            				"items" : {
+                            					"type" : "object",
+                            					"properties" : {
+                            						"referenced" : {
+			                            				"$ref": "#/definitions/stringType",
+			                            				"description" : "Naziv kolone koja je referencirana"
+			                            			},
+			                            			"referencing" : {
+			                            				"$ref": "#/definitions/stringType",
+			                            				"description" : "Naziv kolone koja referencira"
+			                            			}
+                            					},
+                            					"required":["referenced", "referencing"],
+												"additionalProperties":false
+                            				}
+                            			}	
+                            		},
+                            		"required":["referencedTable", "relationName", "label", "pairs"],
+									"additionalProperties":false
+                            	}
+                           	}
+                       	},
+                       	"required":["tableName", "label", "columns"],
+						"additionalProperties":false
+                    }
+                },
+                "packages" : {
+                    "type" : "array",
+                    "items": { "$ref": "#/definitions/package" }
+                }
+            },
+            "required":["packageName", "label", "packageType"],
+			"additionalProperties":false
+        },
+        "stringType" : {
+        	"type": "string",
+        	"minLength": 2,
+			"maxLength": 30
+        }
+    },
+	"additionalProperties":false
+}

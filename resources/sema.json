@@ -1,0 +1,131 @@
+{
+	"package" : 
+	{
+        "packageName" : "PRIMER_SEME",
+        "label" : "PrimerSemeBazePodataka",
+        "packageType" : "package",
+        "packages" : [
+		{                
+			 "packageName" : "PODSISTEM",
+	         "label" : "Podsistem",
+	         "packageType" : "subpackage",
+             "tables" : [
+             {
+                 "tableName" : "PREDMET",
+                 "label" : "Predmet",
+                 "columns" : [
+                 {
+	             	 "columnName" : "SPR",
+	             	 "label" : "Sifra predmeta",
+	            	 "dataType" : "varchar",
+	            	 "length" : 15,
+	            	 "PK" : true,
+	            	 "mandatory" : true
+              	 },
+                 {
+                	 "columnName" : "NAZIV",
+                	 "label" : "Naziv predmeta",
+                 	 "dataType" : "varchar",
+                 	 "length" : 100,
+                 	 "PK" : false,
+                 	 "mandatory" : true
+              	 },
+              	 {
+                  	 "columnName" : "ESPB",
+                  	 "label" : "Broj ESPB",
+                  	 "dataType" : "int",
+                  	 "precision" : 2,
+	                 "PK" : false,
+	                 "mandatory" : true
+              	 }  
+          		 ]
+      	     },
+	      	 {
+		         "tableName" : "NASTAVNIK",
+		         "label" : "Nastavnik",
+		         "columns" : [
+		         {
+		        	 "columnName" : "ID",
+		        	 "label" : "Id broj nastavnika",
+	                 "dataType" : "int",
+	                 "precision" : 9,
+	                 "PK" : true,
+	                 "mandatory" : true
+	             },
+                 {
+                     "columnName" : "IME",
+                     "label" : "Ime nastavnika",
+                  	 "dataType" : "varchar",
+                  	 "length" : 20,
+                  	 "PK" : false,
+                  	 "mandatory" : true
+              	 },
+	             {
+	                 "columnName" : "PREZIME",
+	                 "label" : "Prezime nastavnika",
+	                 "dataType" : "varchar",
+	                 "length" : 20,
+	                 "PK" : false,
+                 	 "mandatory" : true
+	             }      
+	             ]
+             },
+	         {
+	        	 "tableName" : "PREDAJE",
+	        	 "label" : "Predaje",
+	          	 "columns" : [
+	             {
+	                 "columnName" : "ID_NASTAVNIKA",
+	                 "label" : "Id broj predavaca",
+	                 "dataType" : "int",
+	                 "precision" : 9,
+	                 "PK" : true,
+	                 "mandatory" : true
+	             },
+	             {
+	                 "columnName" : "SIFRA_PREDMETA",
+	                 "label" : "Sifra predmeta",
+	                 "dataType" : "varchar",
+	            	 "length" : 15,
+	                 "PK" : true,
+	                 "mandatory" : true
+	             },
+	             {
+                 	 "columnName" : "NA_GODINI",
+                 	 "label" : "Predmet na godini",
+	                 "dataType" : "int",
+	                 "precision" : 1,
+	                 "PK" : false,
+	                 "mandatory" : true
+	             }       
+	             ],
+	             "foreignKeys" : [
+                 {
+					"referencedTable": "NASTAVNIK",
+					"relationName" : "NASTAVNIK_PREDAJE",
+					"label" : "Nastavnik predaje",
+					"pairs": [
+					{
+					 	"referenced" : "ID",
+						"referencing" : "ID_NASTAVNIKA"
+					}
+				 	]  
+			     },
+			     {
+					"referencedTable": "PREDMET",
+					"relationName" : "PREDMET_PREDAVAN",
+					"label" : "Predmet predavan",
+					"pairs": [
+					{
+					 	"referenced" : "SPR",
+						"referencing" : "SIFRA_PREDMETA"
+					}
+				 	]  
+			     }
+			     ]
+  	         }
+             ]   
+		}
+		] 
+	}
+}
